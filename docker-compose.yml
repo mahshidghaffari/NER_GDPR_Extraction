@@ -1,0 +1,14 @@
+version: "3.1"
+services:
+  ner-gdpr-ext:
+    build: .           # Where the Dockerfile is stored
+    restart: always
+
+    # Set up volume for permanent storage
+    volumes:
+      - ./data:/data
+
+    # Connect up ports for connections out of container
+    ports:
+      - "5000:5000"     # API connection
+      - "8888:8888"     # Jupyter
