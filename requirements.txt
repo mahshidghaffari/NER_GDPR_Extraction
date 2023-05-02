@@ -3,3 +3,5 @@ prompter
 openai
 promptify
 markupsafe==2.0.1
+spacy
+pandas
