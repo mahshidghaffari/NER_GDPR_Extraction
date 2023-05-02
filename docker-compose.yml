@@ -6,7 +6,7 @@ services:
 
     # Set up volume for permanent storage
     volumes:
-      - ./data:/data
+      - ./:/home/jovyan/work
 
     # Connect up ports for connections out of container
     ports:
