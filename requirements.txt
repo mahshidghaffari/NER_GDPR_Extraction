@@ -1,8 +1,11 @@
 notebook
 pandas
+numpy
 prompter
 openai
 promptify
 markupsafe==2.0.1
 spacy
-transformers[torch]
+transformers[torch]~=4.28.1
+tensorflow
+keras

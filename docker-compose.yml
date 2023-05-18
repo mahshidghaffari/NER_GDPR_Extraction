@@ -3,6 +3,7 @@ services:
   ner:
     build: .           # Where the Dockerfile is stored
     restart: always
+    container_name: ner
 
     # Set up volume for permanent storage
     volumes:
