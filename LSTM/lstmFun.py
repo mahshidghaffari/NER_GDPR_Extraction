@@ -20,3 +20,12 @@ def get_max_len(sentences):
     return max([len(s) for s in sentences])
 
 
+def add_sentence_id_column(dataset):
+    sentence_idx = 1
+    sentence_indices = []
+    for word in dataset['word']:
+        sentence_indices.append(sentence_idx)
+        if word == '.':
+            sentence_idx += 1
+    dataset.insert(0, 'sentence_idx', sentence_indices)
+    return dataset
