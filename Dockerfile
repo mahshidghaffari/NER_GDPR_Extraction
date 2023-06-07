@@ -9,4 +9,8 @@ COPY requirements.txt .
 # Install requirements
 RUN pip install --no-cache-dir --upgrade -r ./requirements.txt
 
+RUN python -m spacy download en
+
 RUN python -m spacy download en_core_web_sm
+
+
