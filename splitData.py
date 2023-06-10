@@ -4,7 +4,7 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 
 
-def cross_validation(data, output_dir, output_name):
+def split_data(data, output_dir, output_name):
     # Group data by sentences and split data w.r.t the sentence structure
     grouped = data.groupby("sentence_idx").apply(lambda s: [(w, t) for w, t in zip(s["word"].values.tolist(),
                                                                                    s["tag"].values.tolist())])
