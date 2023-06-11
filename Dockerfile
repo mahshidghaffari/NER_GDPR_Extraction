@@ -15,6 +15,10 @@ RUN python -m spacy download en
 
 RUN python -m spacy download en_core_web_sm
 
+RUN pip install tensorflow
+
+RUN pip install keras
+
 
 
 
