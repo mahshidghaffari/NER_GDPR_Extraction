@@ -1,7 +1,7 @@
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
-import LSTM.lstmFun
+import LstmM.lstmFun
 from subprocess import check_output
 
 import splitData
