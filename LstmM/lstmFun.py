@@ -40,10 +40,11 @@ def encoding(data):
     print('Maximum sequence length:', maxlen)
 
     words = list(set(data["word"].values))
-    words.append("ENDPAD")
+    words = ["ENDPAD"] + words
     n_words = len(words);
 
     tags = list(set(data["tag"].values))
+    tags = ["O"] + tags
     n_tags = len(tags)
 
     word2idx = {w: i for i, w in enumerate(words)}
@@ -55,8 +56,4 @@ def encoding(data):
     y = [[tag2idx[w[1]] for w in s] for s in sentences]
     y = pad_sequences(maxlen=maxlen, sequences=y, padding="post", value=tag2idx["O"])
     y = [to_categorical(i, num_classes=n_tags) for i in y]
-    return x, y, maxlen, n_words, n_tags
-
-
-def test():
-    return "hello"
+    return x, y, maxlen, n_words, n_tags, tags, tag2idx

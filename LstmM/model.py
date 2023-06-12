@@ -22,9 +22,8 @@ class LstmModel:
         self.test_data = test_df
         self.tags = list(train_df["tag"].unique())
 
-        self.x_train, self.y_train, self.train_maxlen, self.train_n_words, self.train_n_tag = encoding(self.train_data)
-        self.x_test, self.y_test, self.test_maxlen, self.test_n_words, self.test_tag = encoding(self.test_data)
-
+        self.x_train, self.y_train, self.train_maxlen, self.train_n_words, self.train_n_tag, self.train_tag, self.tag2idx_train = encoding(self.train_data)
+        self.x_test, self.y_test, self.test_maxlen, self.test_n_words, self.test_n_tag, self.test_tag, self.tag2idx_test = encoding(self.test_data)
         self.maxlen = max(self.test_maxlen, self.train_maxlen)
 
     def print_variables(self):
@@ -60,10 +59,12 @@ class LstmModel:
         self.model.save("data/output/LSTM_")
 
     def read_model(self, dir):
-        lstm_model_path = 'data/output/LSTM_'
-        self.model = tf.keras.models.load_model(lstm_model_path)
+        self.model = tf.keras.models.load_model(dir)
+
 
     def general_evaluation(self):
+        print(self.x_test.shape)
+        print(len(self.y_test))
         loss, accuracy = self.model.evaluate(self.x_test, np.array(self.y_test))
         print("Loss: {:.4f}".format(loss))
         print("Accuracy: {:.2f}%".format(accuracy * 100))
