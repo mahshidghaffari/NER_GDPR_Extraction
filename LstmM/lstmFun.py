@@ -1,4 +1,5 @@
-
+import keras
+import numpy as np
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 from keras.utils import to_categorical
 def get_sentences(dataset):
@@ -57,3 +58,24 @@ def encoding(data):
     y = pad_sequences(maxlen=maxlen, sequences=y, padding="post", value=tag2idx["O"])
     y = [to_categorical(i, num_classes=n_tags) for i in y]
     return x, y, maxlen, n_words, n_tags, tags, tag2idx
+
+
+
+def custom_loss(y_true, y_pred):
+    penalty_weight = 10.0  # Weight for penalty
+
+    # Calculate the loss
+    loss = keras.categorical_crossentropy(y_true, y_pred)
+
+    # Apply penalty only when actual value is not the fourth category and predicted value is
+    penalty = (1 - y_true[:, 3]) * y_pred[:, 3]
+    loss += penalty * penalty_weight
+
+    return loss
+
+
+y_true = np.array([0.0, 1.0, 0.0, 0.0])
+y_pred = np.array([0.1, 0.7, 0.2, 0.5])
+
+loss = custom_loss(y_true, y_pred)
+print(loss)
