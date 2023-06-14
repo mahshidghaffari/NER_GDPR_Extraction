@@ -15,9 +15,13 @@ RUN python -m spacy download en
 
 RUN python -m spacy download en_core_web_sm
 
+RUN pip install keras
+
 RUN pip install tensorflow
 
-RUN pip install keras
+RUN pip install keras-crf
+
+RUN pip -q install git+https://www.github.com/keras-team/keras-contrib.git sklearn-crfsuite
 
 
 
