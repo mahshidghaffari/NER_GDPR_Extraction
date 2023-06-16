@@ -24,5 +24,9 @@ RUN pip install keras-crf
 RUN pip -q install git+https://www.github.com/keras-team/keras-contrib.git sklearn-crfsuite
 
 
+#related tp health data
+#Un comment this package if you want to divide the data
+#pip3 install pyneuroner[cpu]
+
 
 
