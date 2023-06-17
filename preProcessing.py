@@ -1,3 +1,6 @@
+#  this is for pre-processing of ner new format data
+
+
 import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
