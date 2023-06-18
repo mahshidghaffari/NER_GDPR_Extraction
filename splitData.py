@@ -10,7 +10,7 @@ def split_data(data, output_dir, output_name):
                                                        s["tag"].values.tolist())]
     grouped = data.groupby("sentence_idx").apply(agg_func)
     grouped_df = pd.DataFrame(grouped, columns=["sentence_idx"])
-    train_sentences, test_sentences = train_test_split(grouped_df, test_size=0.35, random_state=42)
+    train_sentences, test_sentences = train_test_split(grouped_df, test_size=0.4, random_state=42)
     train_sentences = train_sentences['sentence_idx']
     test_sentences = test_sentences["sentence_idx"]
 
@@ -28,7 +28,7 @@ def split_data(data, output_dir, output_name):
 
     train_data = pd.DataFrame({"sentence_idx": train_sentence_id, "word": train_words,"tag": train_tags})
 
-    train_data.to_csv(output_dir + output_name + "_train_data.csv", index=False)
+    train_data.to_csv(output_dir + output_name + "_train_data4.csv", index=False)
 
     # Create empty lists for test columns
     test_sentence_id = []
