@@ -23,6 +23,7 @@ RUN pip install keras-crf
 
 RUN pip -q install git+https://www.github.com/keras-team/keras-contrib.git sklearn-crfsuite
 
+RUN pip install seqeval
 
 #related tp health data
 #Un comment this package if you want to divide the data
