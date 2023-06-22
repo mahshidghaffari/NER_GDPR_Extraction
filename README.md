@@ -10,7 +10,7 @@ named entities GDPR related in text data.
 
 
 # Package Structure:
-_______________________________________________________________________________________________
+
 
 - LSTM: This package includes the implementation of a Bi-LSTM model for NER. It utilizes bidirectional LSTM layers to capture the contextual information of words in a sentence.
 
@@ -25,7 +25,7 @@ ________________________________________________________________________________
 
 
 # Setup
-_______________________________________________________________________________________________
+
 
 First for building project run :
 ```bash
