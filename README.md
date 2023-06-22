@@ -1,7 +1,7 @@
 # Project Name: Extract Personal Information using hybrid model
 
 # Overview:
-_______________________________________________________________________________________________
+
 
 This repository contains implementations of different models for Named Entity Recognition (NER). 
 The goal of this project is to develop accurate and robust models that can identify and classify 
