@@ -3,9 +3,8 @@ import pandas as pd
 # from spacyM.model import SpacyModel
 import splitData
 
-
-data = pd.read_csv("data/health/relabel_full_i2b2_data.csv")
-splitData.split_data(data, "data/health/", "i2b2")
+data = pd.read_csv("data/health/filtered_full_relabel_i2b2.csv")
+splitData.split_data(data, "data/health/", "filtered_i2b2")
 
 # data = "peter Parker has bachelor degree and "
 # model = SpacyModel(data)
