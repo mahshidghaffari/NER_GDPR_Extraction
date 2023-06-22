@@ -1,33 +1,41 @@
-## NER ...
+# Project Name: Extract Personal Information using hybrid model
+
+# Overview:
+_______________________________________________________________________________________________
+
+This repository contains implementations of different models for Named Entity Recognition (NER). 
+The goal of this project is to develop accurate and robust models that can identify and classify 
+named entities GDPR related in text data.
+
+
+
+# Package Structure:
+_______________________________________________________________________________________________
+
+- LSTM: This package includes the implementation of a Bi-LSTM model for NER. It utilizes bidirectional LSTM layers to capture the contextual information of words in a sentence.
+
+- BERT: This package includes the implementation of a NER model using BERT (Bidirectional Encoder Representations from Transformers). BERT provides contextualized word representations that can enhance the accuracy of the NER system.
+
+- SpaCy: This package includes the implementation of NER using the spaCy library. spaCy offers efficient and pre-trained models for NER, along with additional linguistic features.
+
+- Hybrid Model: This package contains the implementation of a hybrid model that combines the strengths of the Bi-LSTM, BERT, and spaCy models. It aims to achieve improved accuracy and performance by leveraging the complementary features of these models.
+
+- healthData: This package includes the necessary data for training and evaluation. For more detailed information about the data, please refer to the readme file in the "healthdata" package.
+
+
 
 # Setup
+_______________________________________________________________________________________________
+
+First for building project run :
+```bash
+sudo docker-compose up --build
+```
 
 To start the service:
 ```bash
 sudo docker-compose up
 ```
 
-When adding requirements make sure to add the `build` tag
-```bash
-sudo docker-compose up --build
-```
-
-If you want to inspect what is happening inside the docker container, first get the name of the running service:
-```bash
-sudo docker ps -a 
-```
-which will return the following:
-```bash
-CONTAINER ID   IMAGE                              COMMAND                  CREATED             STATUS                         PORTS                                                                                  NAMES
-03da5cbc3f07   ner_gdpr_extraction_ner-gdpr-ext   "tini -g -- start-no…"   2 minutes ago       Up 2 minutes (healthy)         0.0.0.0:5000->5000/tcp, :::5000->5000/tcp, 0.0.0.0:8888->8888/tcp, :::8888->8888/tcp   ner_gdpr_extraction_ner-gdpr-ext_1
-```
-
-Then you can inspect the container with:
-```bash
-sudo docker exec -it [CONTAINER-NAME] bash
-```
-
-i.e. 
-```bash
-sudo docker exec -it ner_gdpr_extraction_ner-gdpr-ext_1 bash
-```
+Above command will provide a local URL address which adress the jupyter notebook link to code
+and also will provide a token that is the password to the local jupyter notebook

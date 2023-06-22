@@ -33,7 +33,7 @@ dataset_text_folder = ../data/i2b2_2014_deid
 ```
 
 
-If you use the i2b2 2014 de-identification dataset, please cite as:
+i2b2 2014 de-identification dataset, cite as:
 
  - Stubbs A, Uzuner O. (2015). "[Annotating longitudinal clinical narratives for de-identification: The 2014 i2b2/UTHealth corpus](http://www.ncbi.nlm.nih.gov/pubmed/26319540.)". J Biomed Inform. 2015 Aug 28. PII: S1532-0464(15)00182-3. DOI: 10.1016/j.jbi.2015.07.020.
  - Stubbs A, Kotfila C, Uzuner O. (2015). "[Automated systems for the de-identification of longitudinal clinical narratives: Overview of 2014 i2b2/UTHealth shared task Track 1](http://www.ncbi.nlm.nih.gov/pubmed/26225918)". J Biomed Inform. 2015 Jul 28. PII: S1532-0464(15)00117-3. DOI: 10.1016/j.jbi.2015.06.007.
